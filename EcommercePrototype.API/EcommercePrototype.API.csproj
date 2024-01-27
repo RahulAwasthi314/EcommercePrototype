@@ -15,4 +15,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EcommercePrototype.Business\EcommercePrototype.Business.csproj" />
+  </ItemGroup>
+
 </Project>

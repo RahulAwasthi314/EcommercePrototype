@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EcommercePrototype.Core\EcommercePrototype.Core.csproj" />
+  </ItemGroup>
+
 </Project>
