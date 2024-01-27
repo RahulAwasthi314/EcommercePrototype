@@ -1,10 +1,14 @@
 using EcommercePrototype.API.Data.Context;
 using EcommercePrototype.Business.IRepository;
 using EcommercePrototype.Business.Repository;
+using EcommercePrototype.Business.Utitity;
 using EcommercePrototype.DataAccess.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found");
@@ -21,7 +25,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(ProductProfile));
 
 // Add Product Repository and their interface contracts
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
