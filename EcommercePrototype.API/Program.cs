@@ -1,6 +1,7 @@
 using EcommercePrototype.API.Data.Context;
 using EcommercePrototype.Business.IRepository;
 using EcommercePrototype.Business.Repository;
+using EcommercePrototype.DataAccess.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +34,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+ContextSeed.ApplyMigration(app.Services);
+ContextSeed.ProductSeedAsync(app.Services);
 
 app.UseHttpsRedirection();
 
