@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommercePrototype.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommercePrototype.Business", "EcommercePrototype.Business\EcommercePrototype.Business.csproj", "{77DE2413-1B2E-4B5A-8148-600FD3EA5D9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommercePrototype.DataAccess", "EcommercePrototype.DataAccess\EcommercePrototype.DataAccess.csproj", "{756FB149-E002-4E5B-962B-069702958CB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +29,15 @@ Global
 		{77DE2413-1B2E-4B5A-8148-600FD3EA5D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77DE2413-1B2E-4B5A-8148-600FD3EA5D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77DE2413-1B2E-4B5A-8148-600FD3EA5D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{756FB149-E002-4E5B-962B-069702958CB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{756FB149-E002-4E5B-962B-069702958CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{756FB149-E002-4E5B-962B-069702958CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{756FB149-E002-4E5B-962B-069702958CB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B717439-4A03-4923-9623-68CDCC3C32BB}
 	EndGlobalSection
 EndGlobal
