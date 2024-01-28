@@ -21,6 +21,27 @@ namespace EcommercePrototype.Business.Repository
             _mapper = mapper;
             _logger = logger;
         }
+
+        public async Task<ProductDto?> CreateProduct(ProductDto productDto)
+        {
+            var product = _mapper.Map<Product>(productDto);
+            await _context.Products.AddAsync(product);
+            await _context.SaveChangesAsync();
+            return productDto;
+        }
+
+        public async Task<ProductDto?> DeleteProduct(int id)
+        {
+            var product = _context.Products.Find(id);
+            if (product == null)
+            {
+                return null;
+            }
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<ProductDto>(product);
+        }
+
         public async Task<IEnumerable<ProductDto>?> GetAllProducts()
         {
             var products = await _context.Products.ToListAsync();
@@ -45,6 +66,21 @@ namespace EcommercePrototype.Business.Repository
             }
             _logger.LogInformation($"{product.Name} products fetched from database");
 
+            return _mapper.Map<ProductDto>(product);
+        }
+
+        public ProductDto? UpdateProduct(int id, ProductDto productDto)
+        {
+            var product = _context.Products.Find(id);
+            if (product != null)
+            {
+                // change the product parameters
+                product.Name = productDto.Name;
+                product.Description = productDto.Description;
+                product.Price = productDto.Price;
+                _context.Products.Update(product);
+                _context.SaveChanges();
+            }
             return _mapper.Map<ProductDto>(product);
         }
     }
